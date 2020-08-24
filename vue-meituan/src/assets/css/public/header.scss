@@ -46,7 +46,7 @@
 
         .wrapper {
           margin-top: 16px;
-          border: 1px solid #13D1BE;
+          border: 1px solid #FE8C00;
           border-radius: 4px;
           width: 552px;
           box-sizing: border-box;
@@ -65,7 +65,7 @@
           .el-button {
             width: 88px;
             border: none;
-            background: #13D1BE;
+            background: #FE8C00;
             font-size: 16px;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
@@ -76,7 +76,7 @@
             }
           }
 
-          .hotPlace,
+          .hotSuggest,
           .searchList {
             position: absolute;
             top: 41px;
@@ -198,7 +198,7 @@
             &:after {
               font-family: iconfont;
               font-size: 36px;
-              color: #13D1BE;
+              color: #FE8C00;
             }
           }
 
@@ -273,7 +273,7 @@
       float: right;
       margin: 0;
       padding: 0;
-      z-index: 999;
+      // z-index: 999;
       .nav {
         list-style: none;
         float: right;

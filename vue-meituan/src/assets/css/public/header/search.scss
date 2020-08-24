@@ -1,13 +1,16 @@
 .myHeader{
-  .myHeader-searchbar {
+  .topbar-search {
       // height: 157px;
-      padding: 20px 20px;
-      background: #fff;
+      padding: 10px 20px 35px 20px;
+      // background: #fff;
       align-items: start;
       box-sizing: border-box;
+      box-shadow:2px 2px 8px #dedcdc;
       .left {
         width: 280px;
         padding-top: 15px;
+        margin-right: 40px;
+        margin-left: 30px;
         img {
           width: 126px;
           height: 46px;
@@ -18,7 +21,7 @@
         width: auto;
         .wrapper {
           margin-top: 16px;
-          border: 1px solid #13D1BE;
+          border: 1px solid #FFC300;
           border-radius: 4px;
           width: 552px;
           box-sizing: border-box;
@@ -35,7 +38,7 @@
           .el-button {
             width: 88px;
             border: none;
-            background: #13D1BE;
+            background: #FFC300;
             font-size: 16px;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
@@ -44,7 +47,7 @@
               font-weight: bold;
             }
           }
-          .hotPlace,
+          .hotSuggest,
           .searchList {
             position: absolute;
             top: 41px;
@@ -168,7 +171,7 @@
             &:after {
               font-family: iconfont;
               font-size: 36px;
-              color: #13D1BE;
+              color: #FFC300;
             }
           }
 

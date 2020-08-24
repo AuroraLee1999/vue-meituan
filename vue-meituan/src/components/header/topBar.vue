@@ -1,5 +1,5 @@
 <template>
-    <el-row class="myHeader">
+    <el-row class="myHeader myHeader-topbar">
       <el-col :span="10">
             <geo-position />
       </el-col>
