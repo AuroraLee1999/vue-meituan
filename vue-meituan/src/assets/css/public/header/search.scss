@@ -1,16 +1,16 @@
 .myHeader{
   .topbar-search {
       // height: 157px;
-      padding: 10px 20px 35px 20px;
+      padding: 10px 20px 45px 20px;
       // background: #fff;
       align-items: start;
       box-sizing: border-box;
       box-shadow:2px 2px 8px #dedcdc;
       .left {
         width: 280px;
-        padding-top: 15px;
+        padding-top: 10px;
         margin-right: 40px;
-        margin-left: 30px;
+        margin-left: 50px;
         img {
           width: 126px;
           height: 46px;
@@ -20,7 +20,7 @@
         flex: 1;
         width: auto;
         .wrapper {
-          margin-top: 16px;
+          margin-top: 10px;
           border: 1px solid #FFC300;
           border-radius: 4px;
           width: 552px;

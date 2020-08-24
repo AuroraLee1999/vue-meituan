@@ -1,17 +1,15 @@
 <template>
-  <div class="layout-default">
-    <el-container>
-      <el-header height=''>
-        <!-- <my-header /> -->d
+    <el-container class="layout-default">
+      <el-header>
+        <my-header />
       </el-header>
-      <el-main height=''>
+      <el-main>
         <router-view></router-view>
       </el-main>
-      <el-footer>
+      <el-footer >
         <my-footer />
-      </el-footer>
+      </el-footer >
     </el-container>
-  </div>
 </template>
 
 <script>
