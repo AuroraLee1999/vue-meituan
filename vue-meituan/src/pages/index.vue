@@ -8,16 +8,23 @@
           <my-life />
       </el-col>
     </el-row>
+    <el-row>
+      <el-col>
+        <my-card></my-card>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
 <script>
 import MyMenu from "@/components/index/menu";
 import MyLife from '@/components/index/life'
+import MyCard from '@/components/index/card'
 export default {
   components: {
     MyMenu,
-    MyLife
+    MyLife,
+    MyCard,
   }
 };
 </script>
