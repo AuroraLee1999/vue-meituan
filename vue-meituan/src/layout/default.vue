@@ -3,12 +3,12 @@
       <el-header>
         <my-header />
       </el-header>
-      <el-main>
+      <el-main class="el-main">
         <router-view></router-view>
       </el-main>
       <el-footer >
         <my-footer />
-      </el-footer >
+      </el-footer>
     </el-container>
 </template>
 
@@ -23,6 +23,6 @@ export default {
 };
 </script>
 
-<style>
-
+<style lang='scss'>
+@import '@/assets/css/public/layout.scss';
 </style>

@@ -1,10 +1,8 @@
 .page-index{
     .left-menu {
       width: 230px;
-      height: 475px;
+      height: 479px;
       box-sizing: border-box;
-      margin-top: 70px;
-      margin-left: 70px;
       color: #646464;
       position: relative;
       background: #FFF;
@@ -203,14 +201,19 @@
         }
       }
     }
-    .slide {
+    .center-carousel {
       height: 240px;
-      // width: 540px;
-      margin: 10px;
-
-      img {
+      width: 540px;
+      margin-top: 10px;
+      // margin-left: 10px;
+      .el-carousel__container{
         height: 240px;
+        img {
+          height: 240px;
+          width: 565px;
+        }
       }
+
     }
 }
 
