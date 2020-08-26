@@ -1,12 +1,12 @@
 <template>
     <el-container class="layout-default">
-      <el-header>
+      <el-header height="">
         <my-header />
       </el-header>
       <el-main class="el-main">
         <router-view></router-view>
       </el-main>
-      <el-footer >
+      <el-footer height="">
         <my-footer />
       </el-footer>
     </el-container>

@@ -20,6 +20,7 @@ export default {
     data(){
         return{
             movie:{
+                name:"movie",
                 title:"猫眼电影",
                 list:[
                     {
@@ -32,6 +33,7 @@ export default {
                 ]
             },
             minsu:{
+                name:"minsu",
                 title:"推荐民宿",
                 list:[
                     {

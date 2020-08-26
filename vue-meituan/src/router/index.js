@@ -4,6 +4,7 @@ import DefaultPage from '@/layout/default'
 import BlankPage from '@/layout/blank'
 import goodList from '@/pages/goodList'
 import Index from '@/pages/index'
+import changeCity from '@/pages/changeCity'
 Vue.use(Router)
 
 export default new Router({
@@ -20,6 +21,10 @@ export default new Router({
         path: '/index',
         name: 'index',
         component: Index
+      }, {
+        path: '/changeCity',
+        name: 'changeCity',
+        component: changeCity
       }]
     }, {
       path: '/blank',

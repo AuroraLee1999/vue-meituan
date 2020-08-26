@@ -8,6 +8,11 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
+Vue.directive('hidePanel', {
+  bind (el, binding, vnode) {
+    document.addEventListener('click', binding.value, false)
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({

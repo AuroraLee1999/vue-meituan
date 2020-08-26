@@ -1,17 +1,17 @@
 <template>
   <div class="my-card-content" @mouseenter="showBtn()" @mouseleave="hideBtn()">
-    <div class="movie">
-        <div class="btn" v-if="btnShow">
-          <div class="btn pre" ref="preBtn">
-            <i class="el-icon-arrow-left"></i>
-          </div>
-          <div class="btn next" ref="nextBtn">
-            <i class="el-icon-arrow-right"></i>
-          </div>
+    <div class="movie" style="left=0px" ref="movie">
+      <div class="btn" v-if="btnShow">
+        <div class="btn pre" @click="pre">
+          <i class="el-icon-arrow-left"></i>
         </div>
+        <div class="btn next" @click="next">
+          <i class="el-icon-arrow-right"></i>
+        </div>
+      </div>
       <div>
         <!-- <el-carousel-item > -->
-        <div class="movie-card" v-for="(item,index) in movieList" :key="index">
+        <div class="movie-card" v-for="(item,index) in movieList" :key="index" ref="movieCard">
           <img class="movieImg" :src="item.imgUrl" alt />
           <img
             class="imax"
@@ -116,12 +116,28 @@ export default {
       btnShow: false
     };
   },
+  // mounted() {
+  //   this.$refs.movie.style.left = 0 + "px";
+  // },
   methods: {
     showBtn() {
       this.btnShow = true;
     },
     hideBtn() {
       this.btnShow = false;
+    },
+    pre() {
+      // console.log(this.$refs.movie.clientLeft)
+      let left = this.$refs.movie.style.left;
+      if (left <= 0) return false;
+      left += "1100px";
+    },
+    next() {
+      console.log(this.$refs.movie.style)
+      if(this.$refs.movie.style.left >1100) return false;
+      this.$refs.movie.style.left -= 1100 +'px';
+      console.log(this.$refs.movie.style.left)
+      // console.log(this.$refs.movie.clientLeft)
     }
   }
 };
