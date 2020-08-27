@@ -1,4 +1,4 @@
-.m-products-list {
+.my-products-list {
     box-sizing: border-box;
     margin-top: 10px;
     background: #FFF;
@@ -9,8 +9,8 @@
     line-height: 20px;
     padding: 11px 20px;
 
-    >dl {
-      dd {
+    >ul {
+      li {
         width: 96px;
         height: 20px;
         display: inline-block;

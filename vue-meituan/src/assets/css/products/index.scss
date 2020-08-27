@@ -1,13 +1,13 @@
-.page-product{
+.my-products{
     padding-top: 10px;
     font-size: 14px;
-    .m-crumbs{
+    .my-crumbs{
         margin: 10px 0;
         .el-breadcrumb {
           font-size: 12px;
         }
     }
-    .s-item {
+    .my-leftitem {
       display: flex;
       padding: 20px 0;
       min-height: 125px;
@@ -27,34 +27,65 @@
 
       dd {
         flex: 1;
+        margin-left: 0px;
+        p{
+          margin-top: 6px;
+          margin-bottom: 0;;
+        }
 
-        >h3 {
+        h3 {
           font-weight: 500;
           font-size: 16px;
           color: #333;
+          margin: 0;
+        }
+        .fontspan,
+        .avgPrice {
+          font-size: 12px;
+          margin-right: 10px;
         }
 
         .el-rate {
           display: inline-block;
 
-          .el-rate__icon {
-            font-size: 12px;
+          .el-rate__item {
+            width: 17px;
+            color:#FF9900;
           }
         }
 
-        >span {
-          font-size: 12px;
-          margin-right: 10px;
-        }
 
-        .s-item-comment-total {
+        .my-leftitem-comment-total {
           color: #f90;
+          font-size: 12px;
         }
 
-        .s-item-price {
+        .my-leftitem-price {
           color: #f60;
         }
-        .deal-items {
+        .tab{
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          line-height: 20px;
+          font-size: 12px;
+          float: left;
+          max-width: 110px;
+        }
+        .address{
+          font-size: 12px;
+          margin-left: 20px;
+        }
+        .map{
+          font-size: 12px;
+          font-weight: bold;
+        }
+        .el-icon-location{
+          color: #FF9900;
+        }
+        .item-youhui {
+          padding-left: 0px;
+          list-style: none;
           .items {
             cursor: pointer;
             border-radius: 4px;
@@ -74,12 +105,12 @@
               color: #f60;
               margin-right: 10px;
             }
-            .deal-old-price {
+            .youhui-old-price {
               font-size: 12px;
               color: #999;
               margin-right: 10px;
             }
-            .deal-sales {
+            .youhui-sales {
               font-size: 12px;
               color: #999;
             }
@@ -110,49 +141,49 @@
           }
         }
 
-        >ul {
-          list-style: none;
-          font-size: 12px;
-          padding-top: 11px;
-          margin-top: 5px;
-          border-top: 1px dashed #ddd;
+        // >ul {
+        //   list-style: none;
+        //   font-size: 12px;
+        //   padding-top: 11px;
+        //   margin-top: 5px;
+        //   border-top: 1px dashed #ddd;
 
-          li {
-            width: 668px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        //   li {
+        //     width: 668px;
+        //     white-space: nowrap;
+        //     overflow: hidden;
+        //     text-overflow: ellipsis;
 
-            .detail-type {
-              width: 27px;
-              height: 15px;
-              line-height: 15px;
-              display: inline-block;
-              background: rgb(35, 147, 238);
-              color: #fff;
-              text-align: center;
-              border-radius: 1px;
-              padding: 1px 2px;
-              margin-right: 10px;
-            }
+        //     .detail-type {
+        //       width: 27px;
+        //       height: 15px;
+        //       line-height: 15px;
+        //       display: inline-block;
+        //       background: rgb(35, 147, 238);
+        //       color: #fff;
+        //       text-align: center;
+        //       border-radius: 1px;
+        //       padding: 1px 2px;
+        //       margin-right: 10px;
+        //     }
 
-            &:nth-child(2) {
-              .detail-type {
-                background: rgb(162, 35, 204);
-              }
-            }
+        //     &:nth-child(2) {
+        //       .detail-type {
+        //         background: rgb(162, 35, 204);
+        //       }
+        //     }
 
-            &:nth-child(3) {
-              .detail-type {
-                background: rgb(234, 109, 45);
-              }
-            }
-          }
-        }
+        //     &:nth-child(3) {
+        //       .detail-type {
+        //         background: rgb(234, 109, 45);
+        //       }
+        //     }
+        //   }
+        // }
       }
 
     }
-    .m-products-list {
+    .my-products-list {
       box-sizing: border-box;
       margin-top: 10px;
       background: #FFF;
@@ -166,17 +197,28 @@
         text-decoration: none;
         color: #333;
       }
-      >ul {
+      hr{
+        background-color: rgb(233, 231, 231);
+        height: 1px;
+        border: 0;
+        text-align: right;
+      }
+      .produceList {
+        list-style: none;
+        margin: 0;
+        padding-top: 5px;
+        margin-bottom: 10px;
         li {
           width: 96px;
           height: 20px;
           display: inline-block;
           box-sizing: border-box;
-          text-align: center;
+          text-align: left;
           cursor: pointer;
 
-          &.s-nav-active {
-            color: #31BCAD;
+          &.active {
+            color: #000;
+            font-weight: bold;
           }
         }
 
@@ -204,37 +246,41 @@
           }
         }
       }
-
-      >ul {
-        list-style: none;
-        padding: 11px 0;
-      }
     }
-    .m-product-categroy {
-      padding: 15px 20px 0;
+    .my-panel {
+      padding-left: 20px;
       background: #FFF;
       border: 1px solid #E5E5E5;
       border-radius: 4px;
       color: #333;
       font-size: 14px;
-      font-weight: 500;
+      // font-weight: 500;
       line-height: 20px;
+
+      hr{
+        background-color: rgb(233, 231, 231);
+        height: 1px;
+        border: 0;
+        text-align: right;
+        width: 550px;
+      }
     }
 
     .classic {
       display: flex;
-      padding-bottom: 10px;
+      margin-bottom: 10px;;
 
       >dt {
         width: 80px;
+        font-weight: 500;
 
         &:nth-child(2) {
           border-radius: 100px;
-          background: #FE8C00;
-          color: #FFF;
-          height: 22px;
-          line-height: 22px;
-          width: 40px;
+          background: #FFBD00;
+          color: #000;
+          height: 25px;
+          line-height: 25px;
+          width: 50px;
           box-sizing: border-box;
           margin-right: 40px;
           text-align: center;
@@ -243,23 +289,23 @@
 
       &:nth-child(1) {
         dd {
-          border-bottom: 1px solid #ddd;
+          // border-bottom: 1px solid #ddd;
         }
       }
     }
-    .m-product-select {
+    .my-select {
       padding-bottom: 5px;
       min-width: 120px;
+      height: 20px;
 
       .tab {
         position: relative;
+        margin: 0;
 
         dt {
           font-size: 14px;
           line-height: 24px;
-          &.select-title {
-            color: #ccc;
-          }
+          cursor: pointer;
         }
 
         dd {
@@ -273,6 +319,11 @@
             border-style: solid;
             border-width: 5px;
             top: -11px;
+            cursor: pointer;
+          }
+          .select-title{
+            color: #ccc;
+            font-size: 16px;
           }
 
           &:after {
@@ -298,22 +349,18 @@
           white-space: normal;
           font-size: 12px;
           text-align: left;
-          background: #FFF;
+          background: rgb(255, 255, 255);
           border: 1px solid #E5E5E5;
           border-radius: 4px;
           padding: 19px 15px 9px;
+          left: -50px;
+          color: rgb(97, 96, 96);
 
           span {
             display: inline-block;
             min-width: 120px;
             line-height: 1.5;
             font-weight: 500;
-          }
-
-          h3 {
-            color: #ccc;
-            font-size: 16px;
-            margin-bottom: 11px;
           }
         }
 
