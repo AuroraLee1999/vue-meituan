@@ -1,12 +1,23 @@
 .my-products{
     padding-top: 10px;
     font-size: 14px;
+    position: relative;
     .my-crumbs{
         margin: 10px 0;
         .el-breadcrumb {
           font-size: 12px;
         }
     }
+    .mapImg{
+      width: 248px;
+      height: 220px;
+      // position: fixed;
+      top: 0;
+      left: 0;
+      padding-left: 10px;
+      box-sizing: border-box;
+    }
+    
     .my-leftitem {
       display: flex;
       padding: 20px 0;

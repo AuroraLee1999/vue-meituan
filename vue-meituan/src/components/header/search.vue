@@ -8,18 +8,24 @@
       </el-col>
       <el-col :span="15" class="center">
         <div class="wrapper">
-          <el-input v-model="searchInput" placeholder="搜索商家或地点" @focus='searchFocus()' @blur="searchBlur()"></el-input>
+          <el-input
+            v-model="searchInputValue"
+            placeholder="搜索商家或地点"
+            @focus="searchFocus()"
+            @blur="searchBlur()"
+            @input="searchInput()"
+          ></el-input>
           <el-button class="el-icon-search"></el-button>
-          <dl class="hotSuggest" v-if="isHotSuggest" >
+          <dl class="hotSuggest" v-if="isHotSuggest">
             <dt>热门推荐</dt>
-            <dd v-for="(item,index) in hotSuggest" :key="index">{{item}}</dd>
+            <dd class="hotSuggestItem" v-for="(item,index) in hotSuggest" :key="index">{{item}}</dd>
           </dl>
-          <dl class="searchList" v-if="isSearchList" >
-              <dd v-for="(item,index) in searchList" :key="index">{{item}}</dd>
+          <dl class="searchList" v-if="isSearchList">
+            <dd v-for="(item,index) in searchList" :key="index">{{item}}</dd>
           </dl>
         </div>
         <p class="suggest">
-          <router-link to="/">火锅</router-link>
+          <router-link to="/s/火锅">火锅</router-link>
           <router-link to="/">烧烤</router-link>
         </p>
       </el-col>
@@ -28,30 +34,44 @@
 </template>
 
 <script>
+import api from "@/api/index.js";
 export default {
   data() {
     return {
-      searchInput:"",
-      hotSuggest: ["烤肉", "速8酒店", "海底捞"],
-      searchList:["火锅","烤肉火锅","自助火锅"],
-      isFocus:false,
+      searchInputValue: "",
+      hotSuggest: [],
+      searchList: [],
+      isFocus: false
+    };
+  },
+  created() {
+    api.searchHotSuggest().then(res => {
+      this.hotSuggest = res.data.data;
+    });
+  },
+  computed: {
+    isHotSuggest: function() {
+      return this.isFocus && !this.searchInputValue;
+    },
+    isSearchList: function() {
+      return this.isFocus && this.searchInputValue;
     }
   },
-  computed:{
-      isHotSuggest:function(){
-          return this.isFocus && !this.searchInput;
-      },
-      isSearchList:function(){
-          return this.isFocus && this.searchInput;
-      }
-  },
-  methods:{
-      searchFocus(){
-          this.isFocus = true;
-      },
-      searchBlur(){
-          this.isFocus = false;
-      }
+  methods: {
+    searchFocus() {
+      this.isFocus = true;
+    },
+    searchBlur() {
+      this.isFocus = false;
+    },
+    searchInput() {
+      var data = this.searchInputValue;
+      api.searchInputList().then(res=>{
+        this.searchList = res.data.data.list.filter((item, index)=>{
+          return item.indexOf(data)>-1;
+        })
+      })
+    }
   }
 };
 </script>

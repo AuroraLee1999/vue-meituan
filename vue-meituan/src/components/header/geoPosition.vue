@@ -2,7 +2,7 @@
   <div class="geo-position">
       <div class="position">
           <i class="el-icon-location"></i>
-          <router-link to="city">
+          <router-link to="/changeCity">
               扬州
           </router-link>
           <router-link to="changecity" class="changeCity">切换城市</router-link>
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-
+    
 }
 </script>
 

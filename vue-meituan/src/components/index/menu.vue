@@ -1,55 +1,48 @@
 <template>
-  <div class="left-menu">
+  <div class="left-menu" @mouseleave="itemLeave()">
     <dl>
       <dt>全部分类</dt>
-      <dd v-for="(item,index) in menuList" :key="index">
-        <i :class="item.icon"></i>
-        <span>{{item.title}}</span>
+      <dd v-for="(item,index) in menuList" :key="index" @mouseenter="itemEnter(item)" >
+        <i :class="item.type"></i>
+        <span>{{item.name}}</span>
         <span class="arrow"></span>
       </dd>
     </dl>
+    <div class="menuItem" v-if="subList">
+      <dl v-for="(subItem, subIndex) in subList.items" :key="subIndex">
+        <dt>{{subItem.title}}</dt>
+        <dd v-for="(item3, index) in subItem.items" :key="index">{{item3}}</dd>
+      </dl>
+    </div>
   </div>
 </template>
 
 <script>
+import api from '@/api/index.js'
 export default {
   data() {
     return {
-      menuList: [
-        {
-          title: "美食",
-          icon: "food",
-          children: [
-            {
-              childrenTitle: "美食",
-              childrenList: [
-                "代金券","甜点","饮品","火锅","自助餐","小吃","快餐","日韩料理","西餐","聚餐","宴请","烧烤","烤肉"
-              ]
-            }
-          ]
-        },
-        {
-          title: "外卖",
-          icon: "takeout",
-          children: [
-            {
-              childrenTitle: "外卖",
-              childrenList: ["美团外卖"]
-            }
-          ]
-        },
-        {
-          title: "酒店",
-          icon: "hotel",
-          children: [
-            {
-              childrenTitle: "酒店",
-              childrenList: ["经济型", "舒适/三星", "高档/四星", "豪华/五星"]
-            }
-          ]
-        }
-      ]
+      menuList:[],
+      subList:null,
     };
+  },
+  created(){
+    api.getRightNav().then(res=>{
+      // console.log(res.data.data)
+      this.menuList = res.data.data;
+    })
+  },
+  methods:{
+    itemEnter(item){
+      this.subList = item;
+      // console.log(this.subList);
+    },
+    itemLeave(){
+      var self = this;
+      this.timer = setTimeout(() => {
+        self.subList = null;
+      }, 200);
+    }
   }
 };
 </script>

@@ -4,7 +4,7 @@
           <my-crumb />
       </el-row>
       <el-row>
-          <el-col :span="19">
+          <el-col :span="19" >
               <el-row>
                   <my-selectpanel />
               </el-row>
@@ -13,7 +13,10 @@
               </el-row>
           </el-col>
           <el-col :span="5">
-
+              <el-row>
+                  <img class="mapImg" src="@/assets/img/map.png" alt="">
+                  <my-rightitem />
+              </el-row>
           </el-col>
       </el-row>
   </div>

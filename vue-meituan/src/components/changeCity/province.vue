@@ -31,6 +31,7 @@
 
 <script>
 import MySelect from "@/components/changeCity/select.vue";
+import axios from "@/axios.js"
 export default {
   components: {
     MySelect
@@ -39,13 +40,23 @@ export default {
     return {
       province: "省份",
       city: "城市",
-      provinceList: ["山东", "甘肃", "江苏", "北京", "云南", "海南"],
+      provinceList: [],
       cityList: ["无锡", "南京", "苏州", "南通", "常州", "徐州", "扬州"],
       provinceActive: false,
       cityActive: false,
       searchWord: "",
       searchList: ["无锡", "南京", "苏州", "南通", "常州", "徐州", "扬州"]
     };
+  },
+  created(){
+    axios.get("/api/meituan/city/province.json").then(res=>{
+      // console.log(res.data.data);
+      this.provinceList = res.data.data.map(item=>{
+        item.name = item.provinceName;
+        return item;
+      })
+      console.log(this.provinceList)
+    })
   },
   methods: {
     changeProvinceActive(flag) {

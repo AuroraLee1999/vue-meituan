@@ -153,8 +153,8 @@
         .arrow {
           width: 4px;
           height: 4px;
-          border-bottom: 1px solid #fff;
-          border-right: 1px solid #fff;
+          border-bottom: 1px solid #000;
+          border-right: 1px solid #000;
           transform: rotate(-45deg);
           display: block;
           position: absolute;
@@ -165,7 +165,7 @@
         }
       }
 
-      .detail {
+      .menuItem {
         padding: 0 30px;
         position: absolute;
         left: 230px;
@@ -175,24 +175,25 @@
         background: #fff;
         z-index: 9999;
 
-        h4 {
+        dt {
           font-size: 16px;
           font-weight: 500;
           margin-top: 24px;
-          height: 22px;
-          line-height: 22px;
           padding-bottom: 10px;
+          margin-bottom: 0;
           border-bottom: 1px solid #e5e5e5;
           color: #222;
+          height: 40px;
         }
 
-        span {
+        dd {
           color: #999;
           font-size: 12px;
           line-height: 15px;
           display: inline-block;
-          margin-right: 16px;
+          margin-right: 5px;
           margin-top: 10px;
+          margin-left: 2px;
           cursor: pointer;
 
           &:hover {

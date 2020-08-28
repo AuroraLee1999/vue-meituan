@@ -5,8 +5,8 @@
       <i class="el-icon-caret-bottom" @click="showPanel"></i>
       <div :class="{'choose-content':true, 'active': showPanelActive}">
       <h2>{{value}}</h2>
-      <div v-for="(item,index) in itemList" :key="index" class="panelItem">
-          <div>{{item}}</div>
+      <div v-for="(itemList,index) in renderList" :key="index" class="panelItem">
+          <span v-for="(item2, index) in itemList" :key="index">{{item2.name}}</span>
       </div>
     </div>
     </div>
@@ -36,6 +36,16 @@ export default {
             // this.showPanelList = false;
             this.$emit('changeActive', false)
             // console.log('hide-panel')
+        }
+    },
+    computed:{
+        renderList:function(){
+            let col = Math.ceil(this.itemList.length / 12);
+            let resultList = [];
+            for(let i = 0; i < col; i++){
+                resultList.push(this.itemList.slice(i * 12, i* 12+12))
+            }
+            return resultList;
         }
     }
 };
