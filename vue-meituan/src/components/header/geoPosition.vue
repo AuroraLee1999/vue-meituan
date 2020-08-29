@@ -11,8 +11,8 @@
           ]
       </div>
       <div class="login-user">
-          <router-link to="login" class="login">立即登陆</router-link>
-          <router-link to="register" class="register">注册</router-link>
+          <router-link :to="{name:'login'}" class="login">立即登陆</router-link>
+          <router-link :to="{name:'register'}" class="register">注册</router-link>
       </div>
   </div>
 </template>

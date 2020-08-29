@@ -1,26 +1,28 @@
-.page-login{
+.my-login{
+  background-color: #FFF;
     .login-header {
       position: relative;
       width: 980px;
       height: auto;
       margin: 40px auto 30px;
       .logo {
-        background-image: url(//s0.meituan.net/bs/file/?f=fe-sso-fs:build/assets/sp-retina.b95a7dd.png);
+        background: url(//s0.meituan.net/bs/file/?f=fe-sso-fs:build/assets/logo.6a89007.png) no-repeat;
         background-position: 0 !important;
         background-size: contain !important;
-        width: 82px;
-        height: 54px;
+        width: 130px;
+        height: 47px;
         display: block;
       }
     }
-    .login-panel {
+    .login-container {
       margin: 0 auto 70px;
       width: 980px;
       display: flex;
-      .banner {
+      .login-img{
         margin-right: 115px;
       }
-      .form {
+      .login-panel {
+        margin-top: 40px;
         display: flex;
         flex-direction: column;
         width: 270px;
@@ -48,23 +50,35 @@
             }
           }
         }
+        .choose-login{
+          font-size: 14px;
+          color: #626262;
+          margin-bottom: 0;
+          .login-phone{
+            font-size: 12px;
+            float: right;
+          }
+        }
         em {
           font-style: normal;
           float: right;
         }
-        .reg {
-          padding-top: 10px;
+        .register {
+          margin-top: 5px;
+          margin-bottom: 0;
           font-size: 14px;
+          color: #222;
           a {
             text-decoration: none;
+            color: #FE8C00;
             &:hover {
               text-decoration: underline;
             }
           }
         }
-        .oauth-wrapper {
-            margin-top: 20px;
-            .title-wrapper {
+        .login-oauth {
+            color: #222;
+            .oauth-title {
               position: relative;
               margin-bottom: 30px;
               border-bottom: 1px solid #CCC;
@@ -84,10 +98,10 @@
                 background: #FFF;
               }
             }
-            .oauth {
+            .oauth-friends {
               padding-left: 88px;
             }
-            .oauth__link {
+            .oauth_link_qq {
               float: left;
               margin-right: 20px;
               width: 18px;
@@ -95,11 +109,11 @@
               background-position: -1250px -491px;
               background-image: url(//s0.meituan.net/bs/file/?f=fe-sso-fs:build/assets/sp-normal.2ee5c09.png);
             }
-            .oauth__link--weibo {
+            .oauth_link_weibo {
               width: 18px;
               height: 18px;
               background-position: -1250px -599px;
-              background-image: url(//s0.meituan.net/bs/file/?f=fe-sso-fs:build/assets/sp-normal.2ee5c09.png);
+              background-image: url(//s0.meituan.net/bs/file/?f=fe-sso-fs:build/assets/sp-normal.2ee5c09.png)
             }
            
         }
@@ -110,12 +124,13 @@
         margin-top: 10px;
       }
 
-      .foot {
+      .forget {
         margin-top: 10px;
         font-size: 12px;
         a {
           float: right;
           text-decoration: none;
+          color:#FE8C00;
         }
 
       }
@@ -149,15 +164,14 @@
         }
       }
 
-      .btn-login {
-        margin-top: 10px;
-        color: #fff;
-        background-color: #2db3a6;
+      .login-button {
+        color: #222;
+        background-image: linear-gradient(135deg,#FFD000 0,#FFBD00 100%);
         border: none;
         padding: 12px 15px;
       }
     }
-    footer {
+    .login-footer {
       width: 980px;
       margin: 0 auto 30px;
       text-align: left;
