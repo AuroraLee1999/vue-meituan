@@ -3,11 +3,11 @@
       <div class="position">
           <i class="el-icon-location"></i>
           <router-link to="/changeCity">
-              扬州
+              {{position.name}}
           </router-link>
           <router-link to="changecity" class="changeCity">切换城市</router-link>
           [
-          <a href="">镇江 仪征 江都</a>
+          <a href="" v-for="(item, index) in position.nearCity" :key="index">{{item.name}}</a>
           ]
       </div>
       <div class="login-user">
@@ -18,8 +18,21 @@
 </template>
 
 <script>
+import api from '@/api/index.js'
 export default {
-    
+    data(){
+        return{
+            position:{},
+        }
+    },
+    created(){
+        api.getPosition().then(res=>{
+            this.position = res.data.data;
+        })
+    },
+    mounted(){
+        console.log(this.$store)
+    }
 }
 </script>
 

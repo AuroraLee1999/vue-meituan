@@ -7,6 +7,8 @@
       :itemList="provinceList"
       @changeActive="changeProvinceActive"
       :showPanelActive="provinceActive"
+      @change="changeProvince"
+      className="province"
     />
     <my-select
       :value="city"
@@ -14,6 +16,9 @@
       :itemList="cityList"
       @changeActive="changeCityActive"
       :showPanelActive="cityActive"
+      :disabled="cityDisabled"
+      @change="changeCity"
+      className="city"
     />
     <span>直接搜索：</span>
     <el-select
@@ -24,14 +29,14 @@
       reserve-keyword
       placeholder="请输入城市中文或拼音"
     >
-      <el-option v-for="item in searchList" :key="item" :value="item"></el-option>
+      <el-option v-for="item in searchList" :key="item.id" :value="item.name"></el-option>
     </el-select>
   </div>
 </template>
 
 <script>
 import MySelect from "@/components/changeCity/select.vue";
-import axios from "@/axios.js"
+import api from "@/api/index.js"
 export default {
   components: {
     MySelect
@@ -41,21 +46,24 @@ export default {
       province: "省份",
       city: "城市",
       provinceList: [],
-      cityList: ["无锡", "南京", "苏州", "南通", "常州", "徐州", "扬州"],
+      cityList: [],
       provinceActive: false,
       cityActive: false,
       searchWord: "",
-      searchList: ["无锡", "南京", "苏州", "南通", "常州", "徐州", "扬州"]
+      searchList: [],
+      cityDisabled:true,
     };
   },
   created(){
-    axios.get("/api/meituan/city/province.json").then(res=>{
-      // console.log(res.data.data);
+    api.getProvinceList().then(res=>{
+      // console.log(res.data.data.cityInfoList);
       this.provinceList = res.data.data.map(item=>{
         item.name = item.provinceName;
         return item;
       })
-      console.log(this.provinceList)
+    })
+    api.getRecentCity().then(res=>{
+      this.searchList = res.data.data;
     })
   },
   methods: {
@@ -71,10 +79,16 @@ export default {
         this.provinceActive = false;
       }
     },
-    remoteMethod(){}
+    changeProvince(item){
+      this.province = item.name;
+      this.cityDisabled = false;
+      this.cityList = item.cityInfoList;
+    },
+    changeCity(){}
   }
 };
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/css/changecity/iselect.scss'
 </style>

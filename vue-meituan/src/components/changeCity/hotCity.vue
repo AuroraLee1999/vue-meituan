@@ -2,19 +2,25 @@
   <div class="my-hotcity">
       <dl>
           <dt>{{title}}</dt>
-          <dd v-for="(item,index) in hotCityList" :key="index">{{item}}</dd>
+          <dd v-for="(item,index) in hotCityList" :key="index">{{item.name}}</dd>
       </dl>
   </div>
 </template>
 
 <script>
+import api from '@/api/index.js'
 export default {
     data(){
         return{
-            hotCityList:["北京", "上海", "广州", "深圳", "天津", "西安", "重庆", "杭州", "南京", "武汉", "成都"]
+            hotCityList:[]
         }
     },
-    props:['title']
+    props:['title'],
+    created(){
+        api.getHotCity().then(res=>{
+            this.hotCityList = res.data.data;
+        })
+    }
 }
 </script>
 

@@ -1,4 +1,4 @@
-.page-changeCity{
+.my-changecity{
   width: 1190px;
   box-sizing: border-box;
   margin: 20px auto 0;
@@ -7,7 +7,7 @@
   border-radius: 4px;
   min-height: 1000px;
   padding: 20px;
-  .m-iselect {
+  .my-province {
     .province {
       cursor: pointer;
       border-radius: 4px;
@@ -15,7 +15,7 @@
     }
 
     .city {
-      cursor: not-allowed;
+      cursor: pointer;
       border-radius: 4px;
       margin: 0 20px 0 10px;
     }
