@@ -31,13 +31,13 @@
       </el-col>
       <el-col :span="6">
         <div class="my-life-login">
-          <img src="//s0.meituan.net/bs/fe-web-meituan/e350c4a/img/avatar.jpg" alt="">
-          <p class="my-life-login-name">Hi! 你好</p>
-          <router-link to="/">
-              <el-button round>注册</el-button>
+          <img src="//s0.meituan.net/bs/fe-web-meituan/e350c4a/img/avatar.jpg" alt />
+          <p class="my-life-login-name">Hi! {{$store.state.userName ? $store.state.userName: '你好'}}</p>
+          <router-link :to="{name:'register'}" v-if="!$store.state.userName">
+            <el-button round>注册</el-button>
           </router-link>
-          <router-link to="/">
-              <el-button round>立即登陆</el-button>
+          <router-link :to="{name:'login'}" v-if="!$store.state.userName">
+            <el-button round>立即登陆</el-button>
           </router-link>
         </div>
       </el-col>
@@ -53,14 +53,14 @@
         <div class="my-life-business"></div>
       </el-col>
       <el-col :span="6">
-          <div class="my-life-downapp">
-              <img src="//s1.meituan.net/bs/fe-web-meituan/60ac9a0/img/download-qr.png" alt="">
-              <p >美团APP手机版</p>
-              <p class="last">
-                  <span>1元起</span>
-                  吃喝玩乐
-              </p>
-          </div>
+        <div class="my-life-downapp">
+          <img src="//s1.meituan.net/bs/fe-web-meituan/60ac9a0/img/download-qr.png" alt />
+          <p>美团APP手机版</p>
+          <p class="last">
+            <span>1元起</span>
+            吃喝玩乐
+          </p>
+        </div>
       </el-col>
     </el-row>
   </div>

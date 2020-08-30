@@ -11,9 +11,11 @@
   .geo-position {
     color: #666;
     font-size: 12px;
+    // margin-top:10px ;
     .position,
     .login-user {
       display: inline-block;
+      line-height: 40px;
     }
     .changeCity {
       background: #F4F4F4;
@@ -29,6 +31,8 @@
     .username {
       color: #FE8C00;
       cursor: pointer;
+      margin-left: 20px;
+      margin-right: 10px;
     }
     .login,
     .register {

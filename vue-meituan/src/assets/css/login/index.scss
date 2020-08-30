@@ -4,7 +4,8 @@
       position: relative;
       width: 980px;
       height: auto;
-      margin: 40px auto 30px;
+      margin: 0 auto 30px;
+      padding-top: 40px;
       .logo {
         background: url(//s0.meituan.net/bs/file/?f=fe-sso-fs:build/assets/logo.6a89007.png) no-repeat;
         background-position: 0 !important;
@@ -34,26 +35,14 @@
           background: #fff6db;
           font-size: 12px;
           padding-left: 26px;
-          >i {
-            position: relative;
-            &:after {
-              position: absolute;
-              display: inline-block;
-              width: 17px;
-              height: 17px;
-              font-family: iconfont;
-              font-style: normal;
-              content: "\e64d";
-              font-size: 28px;
-              top: -9px;
-              left: -24px;
-            }
+          color: #626262;
           }
         }
         .choose-login{
           font-size: 14px;
           color: #626262;
           margin-bottom: 0;
+          cursor: pointer;
           .login-phone{
             font-size: 12px;
             float: right;
@@ -180,9 +169,10 @@
         border-bottom: 1px solid #EEE;
         padding: 12px 0;
         color: #ddd;
+        list-style: none;
         li {
           display: inline-block;
-          font-size: 13px;
+          font-size: 12px;
           text-align: center;
           &:not(:last-child) {
             border-right: 1px solid #eee;
@@ -190,6 +180,7 @@
           a {
             font-size: 13px;
             color: #999;
+            text-decoration: none;
             &:hover {
               text-decoration: underline;
             }
@@ -207,4 +198,3 @@
         color: #999;
       }
     }
-}

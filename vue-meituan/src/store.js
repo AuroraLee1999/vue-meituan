@@ -5,16 +5,23 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    position: {}
+    position: {},
+    userName: ''
   },
   mutations: {
     setPosition (state, val) {
       state.position = val
+    },
+    setUsername(state, val) {
+      state.userName = val
     }
   },
   actions: {
     setPosition ({ commit }, val) {
       commit('setPosition', val)
+    },
+    setUsername({ commit }, val) {
+      commit('setUsername', val)
     }
   }
 })

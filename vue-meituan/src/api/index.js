@@ -24,6 +24,12 @@ var api = {
   },
   getPosition() {
     return axios.get('/api/meituan/city/getPosition.json')
+  },
+  userRegister(params) {
+    return axios.get('/api/meituan/register', params)
+  },
+  userLogin(params) {
+    return axios.get('/api/meituan/login', params)
   }
 }
 

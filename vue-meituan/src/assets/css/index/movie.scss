@@ -3,39 +3,38 @@
     position: relative;
     height: 300px;
     overflow: hidden;
-    .movie{
+    .pre,
+    .next{
+        position: absolute;
+        background-color: #626262;
+        // opacity: 0;
+        width: 40px;
+        height: 40px;
+        z-index: 10;
+        border-radius: 50%;
+        text-align: center;
+        i{
+            font-size: 20px;
+            color: #fff;
+            line-height: 40px;
+            font-weight: 900;
+        }
+        &.pre{
+            top: calc(50% - 20px);
+        }
+        &.next{
+            right: 10px;
+            top: calc(50% - 20px);
+        }
+    }
+    .btn:hover{
+        opacity: 1;
+        cursor: pointer;
+    }
+    .my-movie{
         width: 2200px;
         position: absolute;
         left: 0;
-        .pre,
-        .next{
-            position: fixed;
-            background-color: #626262;
-            // opacity: 0;
-            width: 40px;
-            height: 40px;
-            z-index: 10;
-            border-radius: 50%;
-            text-align: center;
-            i{
-                font-size: 20px;
-                color: #fff;
-                line-height: 40px;
-                font-weight: 900;
-            }
-            &.pre{
-                left: 85px;
-                top: calc(50% - 20px);
-            }
-            &.next{
-                right: 85px;
-                top: calc(50% - 20px);
-            }
-        }
-        .btn:hover{
-            opacity: 1;
-            cursor: pointer;
-        }
         .movie-card{
             width:214px;
             height: 297px;
@@ -60,6 +59,7 @@
                 width: 100%;
                 font-weight: 500;
                 font-size: 12px;
+
                 p{
                     margin: 0;
                     margin-left: 10px;
