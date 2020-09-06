@@ -7,6 +7,7 @@ import Index from '@/pages/index'
 import changeCity from '@/pages/changeCity'
 import Login from '@/pages/login'
 import Register from '@/pages/register'
+import Detail from '@/pages/detail'
 Vue.use(Router)
 
 export default new Router({
@@ -27,6 +28,10 @@ export default new Router({
         path: '/changeCity',
         name: 'changeCity',
         component: changeCity
+      }, {
+        path: '/meishi',
+        name: 'detail',
+        component: Detail
       }]
     }, {
       path: '/blank',
@@ -37,8 +42,8 @@ export default new Router({
         name: 'login',
         component: Login
       }, {
-          path: 'register',
-          name: 'register',
+        path: 'register',
+        name: 'register',
         component: Register
       }]
     }

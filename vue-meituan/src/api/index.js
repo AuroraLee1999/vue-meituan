@@ -30,6 +30,9 @@ var api = {
   },
   userLogin(params) {
     return axios.get('/api/meituan/login', params)
+  },
+  getDetailInfo() {
+    return axios.get('/api/meituan/product/detail.json')
   }
 }
 
